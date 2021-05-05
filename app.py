@@ -10,15 +10,41 @@ from flask import request,make_response
 
 #Initialize the flask App
 app = Flask(__name__)
-model0 = pickle.load(open('model0.pkl', 'rb'))
-model1 = pickle.load(open('model1.pkl', 'rb'))
-model2 = pickle.load(open('model2.pkl', 'rb'))
-model3 = pickle.load(open('model3.pkl', 'rb'))
-model4 = pickle.load(open('model4.pkl', 'rb'))
-model5 = pickle.load(open('model5.pkl', 'rb'))
 
-vec_word = pickle.load(open('vec_word.pkl', 'rb'))
-vec_char = pickle.load(open('vec_char.pkl', 'rb'))
+with open('model0.pkl', 'rb') as fin:
+    model0 = pickle.load(fin)
+
+with open('model1.pkl', 'rb') as fin:
+    model1 = pickle.load(fin)
+
+with open('model2.pkl', 'rb') as fin:
+    model2 = pickle.load(fin)
+
+with open('model3.pkl', 'rb') as fin:
+    model3 = pickle.load(fin)
+
+with open('model4.pkl', 'rb') as fin:
+    model4 = pickle.load(fin)
+
+with open('model5.pkl', 'rb') as fin:
+    model5 = pickle.load(fin)
+
+
+# model0 = pickle.load(open('model0.pkl', 'rb'))
+# model1 = pickle.load(open('model1.pkl', 'rb'))
+# model2 = pickle.load(open('model2.pkl', 'rb'))
+# model3 = pickle.load(open('model3.pkl', 'rb'))
+# model4 = pickle.load(open('model4.pkl', 'rb'))
+# model5 = pickle.load(open('model5.pkl', 'rb'))
+
+with open('vec_word.pkl', 'rb') as fin:
+    vec_word = pickle.load(fin)
+
+with open('vec_char.pkl', 'rb') as fin:
+    vec_char = pickle.load(fin)
+
+# vec_word = pickle.load(open('vec_word.pkl', 'rb'))
+# vec_char = pickle.load(open('vec_char.pkl', 'rb'))
 
 #default page of our web-app
 @app.route('/')
