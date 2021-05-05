@@ -2,7 +2,7 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 from scipy import sparse
-import pickle
+#import pickle
 import joblib
 import json
 
