@@ -2,8 +2,8 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 from scipy import sparse
-#import pickle
-import joblib
+import pickle
+#import joblib
 import json
 
 from flask import request,make_response
@@ -13,22 +13,22 @@ from flask import request,make_response
 app = Flask(__name__)
 
 with open('model0.pkl', 'rb') as fin:
-    model0 = joblib.load(fin)
+    model0 = pickle.load(fin)
 
 with open('model1.pkl', 'rb') as fin:
-    model1 = joblib.load(fin)
+    model1 = pickle.load(fin)
 
 with open('model2.pkl', 'rb') as fin:
-    model2 = joblib.load(fin)
+    model2 = pickle.load(fin)
 
 with open('model3.pkl', 'rb') as fin:
-    model3 = joblib.load(fin)
+    model3 = pickle.load(fin)
 
 with open('model4.pkl', 'rb') as fin:
-    model4 = joblib.load(fin)
+    model4 = pickle.load(fin)
 
 with open('model5.pkl', 'rb') as fin:
-    model5 = joblib.load(fin)
+    model5 = pickle.load(fin)
 
 
 # model0 = pickle.load(open('model0.pkl', 'rb'))
@@ -39,10 +39,10 @@ with open('model5.pkl', 'rb') as fin:
 # model5 = pickle.load(open('model5.pkl', 'rb'))
 
 with open('vec_word.pkl', 'rb') as fin:
-    vec_word = joblib.load(fin)
+    vec_word = pickle.load(fin)
 
 with open('vec_char.pkl', 'rb') as fin:
-    vec_char = joblib.load(fin)
+    vec_char = pickle.load(fin)
 
 # vec_word = pickle.load(open('vec_word.pkl', 'rb'))
 # vec_char = pickle.load(open('vec_char.pkl', 'rb'))
