@@ -38,8 +38,8 @@ with open('model5.pkl', 'rb') as fin:
 # model4 = pickle.load(open('model4.pkl', 'rb'))
 # model5 = pickle.load(open('model5.pkl', 'rb'))
 
-with open('vec_word.pkl', 'rb') as fin:
-    vec_word = pickle.load(fin)
+# with open('vec_word.pkl', 'rb') as fin:
+#     vec_word = pickle.load(fin)
 
 with open('vec_char.pkl', 'rb') as fin:
     vec_char = pickle.load(fin)
@@ -61,16 +61,16 @@ def predict():
     #int_features = [float(x) for x in request.form.values()]
     #final_features = [np.array(int_features)]
 
-    ra_ts_vect = vec_word.transform([request.form['user_input_text']])
+    # ra_ts_vect = vec_word.transform([request.form['user_input_text']])
     ra_ts_vect_char = vec_char.transform([request.form['user_input_text']])
-    ra_x_test = sparse.hstack([ra_ts_vect, ra_ts_vect_char])
+    # ra_x_test = sparse.hstack([ra_ts_vect_char])
 
-    prediction0 = model0.predict(ra_x_test)
-    prediction1 = model1.predict(ra_x_test)
-    prediction2 = model2.predict(ra_x_test)
-    prediction3 = model3.predict(ra_x_test)
-    prediction4 = model4.predict(ra_x_test)
-    prediction5 = model5.predict(ra_x_test)
+    prediction0 = model0.predict(ra_ts_vect_char)
+    prediction1 = model1.predict(ra_ts_vect_char)
+    prediction2 = model2.predict(ra_ts_vect_char)
+    prediction3 = model3.predict(ra_ts_vect_char)
+    prediction4 = model4.predict(ra_ts_vect_char)
+    prediction5 = model5.predict(ra_ts_vect_char)
 
     # if(prediction0[0] + prediction1[0] + 0.6 or prediction2.any() > 0.6 or prediction3.any() > 0.6 or prediction4.any() > 0.6 or prediction5.any() > 0.6):
     #     output = "You are bad boy!"
@@ -108,16 +108,16 @@ def again():
     #final_features = [np.array(int_features)]
     text = request.args.get('text')
 
-    ra_ts_vect = vec_word.transform([text])
+    # ra_ts_vect = vec_word.transform([text])
     ra_ts_vect_char = vec_char.transform([text])
-    ra_x_test = sparse.hstack([ra_ts_vect, ra_ts_vect_char])
+    # ra_x_test = sparse.hstack([ra_ts_vect, ra_ts_vect_char])
 
-    prediction0 = model0.predict(ra_x_test)
-    prediction1 = model1.predict(ra_x_test)
-    prediction2 = model2.predict(ra_x_test)
-    prediction3 = model3.predict(ra_x_test)
-    prediction4 = model4.predict(ra_x_test)
-    prediction5 = model5.predict(ra_x_test)
+    prediction0 = model0.predict(ra_ts_vect_char)
+    prediction1 = model1.predict(ra_ts_vect_char)
+    prediction2 = model2.predict(ra_ts_vect_char)
+    prediction3 = model3.predict(ra_ts_vect_char)
+    prediction4 = model4.predict(ra_ts_vect_char)
+    prediction5 = model5.predict(ra_ts_vect_char)
 
     # if(prediction0[0] + prediction1[0] + 0.6 or prediction2.any() > 0.6 or prediction3.any() > 0.6 or prediction4.any() > 0.6 or prediction5.any() > 0.6):
     #     output = "You are bad boy!"
